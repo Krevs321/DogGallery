@@ -48,6 +48,59 @@ function __VLS_template() {
     const __VLS_8 = __VLS_7({}, ...__VLS_functionalComponentArgsRest(__VLS_7));
     ({}({}));
     const __VLS_11 = __VLS_pickFunctionalComponentCtx(__VLS_6, __VLS_8);
+    // @ts-ignore
+    const __VLS_12 = {}
+        .VAppBar;
+    ({}.VAppBar);
+    ({}.VAppBar);
+    __VLS_components.VAppBar;
+    __VLS_components.vAppBar;
+    __VLS_components.VAppBar;
+    __VLS_components.vAppBar;
+    // @ts-ignore
+    [VAppBar, VAppBar,];
+    // @ts-ignore
+    const __VLS_13 = __VLS_asFunctionalComponent(__VLS_12, new __VLS_12({ elevation: ((10)), }));
+    const __VLS_14 = __VLS_13({ elevation: ((10)), }, ...__VLS_functionalComponentArgsRest(__VLS_13));
+    ({}({ elevation: ((10)), }));
+    __VLS_elementAsFunction(__VLS_intrinsicElements.template, __VLS_intrinsicElements.template)({});
+    {
+        (__VLS_17.slots).prepend;
+        // @ts-ignore
+        const __VLS_18 = {}
+            .VAppBarNavIcon;
+        ({}.VAppBarNavIcon);
+        ({}.VAppBarNavIcon);
+        __VLS_components.VAppBarNavIcon;
+        __VLS_components.vAppBarNavIcon;
+        __VLS_components.VAppBarNavIcon;
+        __VLS_components.vAppBarNavIcon;
+        // @ts-ignore
+        [VAppBarNavIcon, VAppBarNavIcon,];
+        // @ts-ignore
+        const __VLS_19 = __VLS_asFunctionalComponent(__VLS_18, new __VLS_18({}));
+        const __VLS_20 = __VLS_19({}, ...__VLS_functionalComponentArgsRest(__VLS_19));
+        ({}({}));
+        const __VLS_23 = __VLS_pickFunctionalComponentCtx(__VLS_18, __VLS_20);
+    }
+    // @ts-ignore
+    const __VLS_24 = {}
+        .VAppBarTitle;
+    ({}.VAppBarTitle);
+    ({}.VAppBarTitle);
+    __VLS_components.VAppBarTitle;
+    __VLS_components.vAppBarTitle;
+    __VLS_components.VAppBarTitle;
+    __VLS_components.vAppBarTitle;
+    // @ts-ignore
+    [VAppBarTitle, VAppBarTitle,];
+    // @ts-ignore
+    const __VLS_25 = __VLS_asFunctionalComponent(__VLS_24, new __VLS_24({}));
+    const __VLS_26 = __VLS_25({}, ...__VLS_functionalComponentArgsRest(__VLS_25));
+    ({}({}));
+    (__VLS_29.slots).default;
+    const __VLS_29 = __VLS_pickFunctionalComponentCtx(__VLS_24, __VLS_26);
+    const __VLS_17 = __VLS_pickFunctionalComponentCtx(__VLS_12, __VLS_14);
     if (typeof __VLS_styleScopedClasses === 'object' && !Array.isArray(__VLS_styleScopedClasses)) {
     }
     var __VLS_slots;

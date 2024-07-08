@@ -103,7 +103,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #c2c2c2;
   }
   a:hover {
     color: #747bff;
@@ -111,19 +111,10 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-  /* Grid container setup */
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Creates a responsive grid layout */
-    gap: 10px; /* Space between grid items */
-    padding: 10px; /* Padding around the grid container */
-}
 
-.grid-container li {
-    background: #f4f4f4; /* Light grey background for each item */
-    padding: 10px; /* Padding inside each grid item */
-    list-style-type: none; /* Removes bullet points from list items */
-    text-align: center; /* Center text inside each grid item */
+
+.title {
+    text-align: center;
 }
 
 }

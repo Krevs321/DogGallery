@@ -1,33 +1,67 @@
 <template>
-    <div>
-      <h2>About Me</h2>
+  <h1 class="title">About Me</h1>
+  <div class="about-container">
+    <div class="about-image">
+      <img src="../assets/Logo.png" alt="Your Image">
+    </div>
+    <div class="about-text">
       <p>
-        Hello! I'm a Vue.js developer. Here's a list of things I know about Vue:
+        Hello! My name is Gašper Krevs and I am a beginner VueJS developer. Here's a list of things I now know about Vue:
       </p>
       <ul>
-        <li>Vue 3</li>
-        <li>Vue Router</li>
-        <li>Pinia for state management</li>
+        <li>Vue 3, because why use Vue2?</li>
+        <li>Vue Router, of course for routing</li>
+        <li>Basics of Pinia for state management</li>
         <li>Component-based architecture</li>
         <li>Single File Components (SFCs)</li>
-        <li>Vue CLI and Vite</li>
-        <li>SCSS for styling</li>
-        <li>Axios for HTTP requests</li>
+        <li>Vue CLI and Vite, but I used Vite</li>
+        <li>S/CSS for styling this BEAUTIFUL site</li>
+        <li>Basics of Axios for HTTP requests</li>
       </ul>
     </div>
-  </template>
+  </div>
+</template>
+
   
-  <script lang="ts">
+<script lang="ts">
   import { defineComponent } from 'vue';
   
   export default defineComponent({
     name: 'AboutView',
   });
-  </script>
+</script>
   
-  <style scoped>
-  h2 {
-    text-align: center;
-  }
-  </style>
-  
+<style scoped>
+.about-container {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+  justify-content: center; /* Center horizontally */
+  padding: 20px;
+}
+
+.about-image {
+  flex: 1; 
+  padding: 10px;
+}
+
+.about-image img {
+  width: 100%; /* Makes the image responsive */
+  max-width: 400px; /* Limits how large the image can be */
+  height: auto;
+}
+
+.about-text {
+  flex: 1;
+  padding: 10px;
+  text-align: left; /* Aligns the text to the left */
+}
+
+.about-text p, .about-text ul {
+  font-size: 1.2em; 
+  font-weight: bold;
+}
+
+.about-text li {
+  margin-bottom: 20px; /* Adds space between list items */
+}
+</style>

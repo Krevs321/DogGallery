@@ -19,16 +19,19 @@ function __VLS_template() {
     let __VLS_localComponents;
     let __VLS_components;
     let __VLS_styleScopedClasses;
+    // CSS variable injection 
+    // CSS variable injection end 
     let __VLS_resolvedLocalAndGlobalComponents;
     __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({});
-    __VLS_elementAsFunction(__VLS_intrinsicElements.h1, __VLS_intrinsicElements.h1)({});
+    __VLS_elementAsFunction(__VLS_intrinsicElements.h1, __VLS_intrinsicElements.h1)({ ...{ class: ("title") }, });
     (__VLS_ctx.breed);
     // @ts-ignore
     [breed,];
     if (__VLS_ctx.images.length) {
-        __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({});
+        __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("grid") }, });
         for (const [image] of __VLS_getVForSourceType((__VLS_ctx.images))) {
-            __VLS_elementAsFunction(__VLS_intrinsicElements.img)({ src: ((image)), key: ((image)), alt: ((`${__VLS_ctx.breed} image`)), });
+            __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ key: ((image)), ...{ class: ("grid-item") }, });
+            __VLS_elementAsFunction(__VLS_intrinsicElements.img)({ src: ((image)), alt: ((`${__VLS_ctx.breed} image`)), });
             // @ts-ignore
             [breed, images, images,];
         }
@@ -37,6 +40,9 @@ function __VLS_template() {
         __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
     }
     if (typeof __VLS_styleScopedClasses === 'object' && !Array.isArray(__VLS_styleScopedClasses)) {
+        __VLS_styleScopedClasses['title'];
+        __VLS_styleScopedClasses['grid'];
+        __VLS_styleScopedClasses['grid-item'];
     }
     var __VLS_slots;
     return __VLS_slots;
