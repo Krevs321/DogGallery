@@ -15,7 +15,7 @@
         <li>Component-based architecture</li>
         <li>Single File Components (SFCs)</li>
         <li>Vue CLI and Vite, but I used Vite</li>
-        <li>S/CSS for styling this BEAUTIFUL site</li>
+        <li>S/CSS for styling this BEAUTIFUL website</li>
         <li>Basics of Axios for HTTP requests</li>
       </ul>
     </div>
@@ -41,17 +41,18 @@
 
 .about-image {
   flex: 1; 
-  padding: 10px;
+  padding-left: 10px;
 }
 
 .about-image img {
   width: 100%; /* Makes the image responsive */
   max-width: 400px; /* Limits how large the image can be */
   height: auto;
+  padding-left: 25%;
 }
 
 .about-text {
-  flex: 1;
+  flex: 1.5;
   padding: 10px;
   text-align: left; /* Aligns the text to the left */
 }
