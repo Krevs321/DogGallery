@@ -4,20 +4,13 @@ export default (await import('vue')).defineComponent({
         index: Number,
         visible: Boolean
     },
-    data() {
-        return {
-            currentIndex: this.index
-        };
-    },
     methods: {
         close() {
             this.$emit('close');
         },
-        next() {
-            this.currentIndex = (this.currentIndex + 1) % this.images.length;
-        },
-        previous() {
-            this.currentIndex = (this.currentIndex + this.images.length - 1) % this.images.length;
+        navigate(direction) {
+            const newIndex = (this.index + direction + this.images.length) % this.images.length;
+            this.$emit('update:index', newIndex); // Emitting an update to the index
         }
     }
 });
@@ -33,20 +26,28 @@ function __VLS_template() {
     // CSS variable injection end 
     let __VLS_resolvedLocalAndGlobalComponents;
     if (__VLS_ctx.visible) {
-        __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("modal") }, });
+        __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ onClick: (__VLS_ctx.close) }, ...{ class: ("modal") }, });
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("modal-content") }, });
         __VLS_elementAsFunction(__VLS_intrinsicElements.span, __VLS_intrinsicElements.span)({ ...{ onClick: (__VLS_ctx.close) }, ...{ class: ("close") }, });
         // @ts-ignore
-        [visible, close,];
-        __VLS_elementAsFunction(__VLS_intrinsicElements.img, __VLS_intrinsicElements.img)({ src: ((__VLS_ctx.images[__VLS_ctx.currentIndex])), ...{ class: ("full-image") }, });
+        [visible, close, close,];
+        __VLS_elementAsFunction(__VLS_intrinsicElements.img, __VLS_intrinsicElements.img)({ src: ((__VLS_ctx.images[__VLS_ctx.index])), ...{ class: ("full-image") }, });
         // @ts-ignore
-        [images, currentIndex,];
-        __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({ ...{ onClick: (__VLS_ctx.previous) }, ...{ class: ("prev") }, });
-        // @ts-ignore
-        [previous,];
-        __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({ ...{ onClick: (__VLS_ctx.next) }, ...{ class: ("next") }, });
-        // @ts-ignore
-        [next,];
+        [images, index,];
+        __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({ ...{ onClick: (...[$event]) => {
+                    if (!((__VLS_ctx.visible)))
+                        return;
+                    __VLS_ctx.navigate(-1);
+                    // @ts-ignore
+                    [navigate,];
+                } }, ...{ class: ("prev") }, });
+        __VLS_elementAsFunction(__VLS_intrinsicElements.a, __VLS_intrinsicElements.a)({ ...{ onClick: (...[$event]) => {
+                    if (!((__VLS_ctx.visible)))
+                        return;
+                    __VLS_ctx.navigate(1);
+                    // @ts-ignore
+                    [navigate,];
+                } }, ...{ class: ("next") }, });
     }
     if (typeof __VLS_styleScopedClasses === 'object' && !Array.isArray(__VLS_styleScopedClasses)) {
         __VLS_styleScopedClasses['modal'];

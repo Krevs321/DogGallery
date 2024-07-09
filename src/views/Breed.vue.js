@@ -1,10 +1,20 @@
-import { onMounted, computed } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { useRoute } from 'vue-router';
 import { useDogStore } from '../store';
+import ImageModal from '../components/ImageModel.vue';
 const { defineProps, defineSlots, defineEmits, defineExpose, defineModel, defineOptions, withDefaults, } = await import('vue');
 const route = useRoute();
 const store = useDogStore();
 const breed = route.params.breed;
+const modalVisible = ref(false);
+const modalIndex = ref(0);
+const openModal = (index) => {
+    modalIndex.value = index;
+    modalVisible.value = true;
+};
+const closeModal = () => {
+    modalVisible.value = false;
+};
 onMounted(() => {
     store.fetchBreedImages(breed);
 });
@@ -29,16 +39,42 @@ function __VLS_template() {
     [breed,];
     if (__VLS_ctx.images.length) {
         __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ class: ("grid") }, });
-        for (const [image] of __VLS_getVForSourceType((__VLS_ctx.images))) {
-            __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ key: ((image)), ...{ class: ("grid-item") }, });
+        for (const [image, index] of __VLS_getVForSourceType((__VLS_ctx.images))) {
+            __VLS_elementAsFunction(__VLS_intrinsicElements.div, __VLS_intrinsicElements.div)({ ...{ onClick: (...[$event]) => {
+                        if (!((__VLS_ctx.images.length)))
+                            return;
+                        __VLS_ctx.openModal(index);
+                        // @ts-ignore
+                        [images, images, openModal,];
+                    } }, key: ((image)), ...{ class: ("grid-item") }, });
             __VLS_elementAsFunction(__VLS_intrinsicElements.img)({ src: ((image)), alt: ((`${__VLS_ctx.breed} image`)), });
             // @ts-ignore
-            [breed, images, images,];
+            [breed,];
         }
     }
     else {
         __VLS_elementAsFunction(__VLS_intrinsicElements.p, __VLS_intrinsicElements.p)({});
     }
+    // @ts-ignore
+    [ImageModal,];
+    // @ts-ignore
+    const __VLS_0 = __VLS_asFunctionalComponent(ImageModal, new ImageModal({ ...{ 'onClose': {} }, ...{ 'onUpdate:index': {} }, images: ((__VLS_ctx.images)), index: ((__VLS_ctx.modalIndex)), visible: ((__VLS_ctx.modalVisible)), }));
+    const __VLS_1 = __VLS_0({ ...{ 'onClose': {} }, ...{ 'onUpdate:index': {} }, images: ((__VLS_ctx.images)), index: ((__VLS_ctx.modalIndex)), visible: ((__VLS_ctx.modalVisible)), }, ...__VLS_functionalComponentArgsRest(__VLS_0));
+    ({}({ ...{ 'onClose': {} }, ...{ 'onUpdate:index': {} }, images: ((__VLS_ctx.images)), index: ((__VLS_ctx.modalIndex)), visible: ((__VLS_ctx.modalVisible)), }));
+    let __VLS_5;
+    const __VLS_6 = {
+        onClose: (__VLS_ctx.closeModal)
+    };
+    const __VLS_7 = {
+        'onUpdate:index': (...[$event]) => {
+            __VLS_ctx.modalIndex = $event;
+            // @ts-ignore
+            [images, modalIndex, modalIndex, modalVisible, closeModal,];
+        }
+    };
+    const __VLS_4 = __VLS_pickFunctionalComponentCtx(ImageModal, __VLS_1);
+    let __VLS_2;
+    let __VLS_3;
     if (typeof __VLS_styleScopedClasses === 'object' && !Array.isArray(__VLS_styleScopedClasses)) {
         __VLS_styleScopedClasses['title'];
         __VLS_styleScopedClasses['grid'];
@@ -52,7 +88,12 @@ function __VLS_template() {
     const __VLS_internalComponent = __VLS_defineComponent({
         setup() {
             return {
+                ImageModal: ImageModal,
                 breed: breed,
+                modalVisible: modalVisible,
+                modalIndex: modalIndex,
+                openModal: openModal,
+                closeModal: closeModal,
                 images: images,
             };
         },

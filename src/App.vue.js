@@ -98,7 +98,6 @@ function __VLS_template() {
     const __VLS_25 = __VLS_asFunctionalComponent(__VLS_24, new __VLS_24({}));
     const __VLS_26 = __VLS_25({}, ...__VLS_functionalComponentArgsRest(__VLS_25));
     ({}({}));
-    (__VLS_29.slots).default;
     const __VLS_29 = __VLS_pickFunctionalComponentCtx(__VLS_24, __VLS_26);
     const __VLS_17 = __VLS_pickFunctionalComponentCtx(__VLS_12, __VLS_14);
     if (typeof __VLS_styleScopedClasses === 'object' && !Array.isArray(__VLS_styleScopedClasses)) {
