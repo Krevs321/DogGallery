@@ -1,5 +1,9 @@
-# Vue 3 + TypeScript + Vite
+# Dogs Gallery
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is Vue app where you can see the friendliest companions that another human can have - dogs. 
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+No two dogs are the same and of course each dog has it's breed. In the app you can see all the different breeds with an image of that breed.
+You can click on the button View images to see more images of that specifi breed.
+
+To run the app, all I want you to do is, to run this command in your terminal -> npm run dev. This is create a localhost link that you can click and open the website.
+
