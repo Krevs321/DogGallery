@@ -27,7 +27,7 @@ export const useDogStore = defineStore('dogs', {
     async fetchBreedImages(breed: string) {
       try {
         const response = await axios.get(`https://dog.ceo/api/breed/${breed}/images`);
-        this.images = response.data.message;  // Again, explicitly stated as string[]
+        this.images = response.data.message;  
         console.log("Images fetched", this.images);
       } catch (error) {
         console.error('Error fetching breed images:', error);
